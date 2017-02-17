@@ -123,10 +123,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/copy_name_button_text"
-            android:id="@+id/button2"
+            android:id="@+id/copyname"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
-            android:background="@color/button_color" />
+            android:background="@color/button_color"
+            android:clickable="true" />
 
         <Space
             android:layout_width="0sp"
@@ -165,7 +166,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/spinner"
                 android:layout_weight="0"
-                android:background="@color/spinner_color" />
+                android:background="@color/spinner_color"
+                android:transitionGroup="true" />
 
             <Space
                 android:layout_width="match_parent"
