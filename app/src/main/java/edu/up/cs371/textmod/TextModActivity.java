@@ -16,8 +16,12 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity {
@@ -31,13 +35,22 @@ public class TextModActivity extends ActionBarActivity {
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
-    @Override
+
+    private Button button6;
+    private EditText text;
+    private Button button7;
+
     protected void onCreate(Bundle savedInstanceState) {
 
         // perform superclass initialization; load the layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_mod);
 
+        button6 = (Button)findViewById(R.id.button6);
+        button7 = (Button)findViewById(R.id.button7);
+        text = (EditText) findViewById(R.id.editText);
+        button6.setOnClickListener(new upperButtonListener());
+        button7.setOnClickListener(new lowerButtonListener());
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
 
@@ -74,7 +87,20 @@ public class TextModActivity extends ActionBarActivity {
         spinner.setOnItemSelectedListener(new MySpinnerListener());
 
     }
-
+    private class upperButtonListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            String i = text.getText().toString().toUpperCase();
+            text.setText(i);
+        }
+    }
+    private class lowerButtonListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            String i = text.getText().toString().toLowerCase();
+            text.setText(i);
+        }
+    }
     /**
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
      */
