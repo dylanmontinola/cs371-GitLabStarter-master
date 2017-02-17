@@ -38,7 +38,7 @@
             android:layout_weight="1"
             android:textSize="@dimen/edittext_font_size"
             android:singleLine="true"
-            android:text="@string/initial_text" />
+            android:text="fuck" />
 
         <Space
             android:layout_width="0sp"
@@ -69,7 +69,8 @@
             android:id="@+id/button"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
-            android:background="@color/button_color" />
+            android:background="@color/button_color"
+            android:clickable="true" />
 
         <Space
             android:layout_width="0sp"
