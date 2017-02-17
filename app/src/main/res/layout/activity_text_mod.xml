@@ -1,0 +1,199 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    tools:context=".TextModActivity">
+
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Text to process: "
+            android:id="@+id/textView"
+            android:textSize="@dimen/label_font_size" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:layout_weight="1"
+            android:textSize="@dimen/edittext_font_size"
+            android:singleLine="true"
+            android:text="@string/initial_text" />
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"  />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"  />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear_button_text"
+            android:id="@+id/button"
+            android:textSize="@dimen/button_font_size"
+            android:textColor="@color/button_text_color"
+            android:background="@color/button_color" />
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upper_button_text"
+            android:id="@+id/button6"
+            android:textSize="@dimen/button_font_size"
+            android:textColor="@color/button_text_color"
+            android:background="@color/button_color" />
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lower_button_text"
+            android:id="@+id/button7"
+            android:textSize="@dimen/button_font_size"
+            android:textColor="@color/button_text_color"
+            android:background="@color/button_color" />
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/reverse_button_text"
+            android:id="@+id/button4"
+            android:textSize="@dimen/button_font_size"
+            android:textColor="@color/button_text_color"
+            android:background="@color/button_color" />
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copy_name_button_text"
+            android:id="@+id/button2"
+            android:textSize="@dimen/button_font_size"
+            android:textColor="@color/button_text_color"
+            android:background="@color/button_color" />
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"  />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"/>
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="10"  />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1" />
+
+            <Spinner
+                android:layout_width="@dimen/spinner_width"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner"
+                android:layout_weight="0"
+                android:background="@color/spinner_color" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="0sp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:id="@+id/imageView"
+            android:src="@mipmap/kitten" />
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="10" />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>

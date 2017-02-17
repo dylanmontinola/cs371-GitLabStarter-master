@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TextMod</string>
+    <string name="action_settings">Settings</string>
+    <string name="clear_button_text">Clear</string>
+    <string name="upper_button_text">Upper</string>
+    <string name="lower_button_text">Lower</string>
+    <string name="reverse_button_text">Reverse</string>
+    <string name="copy_name_button_text">Copy Name</string>
+    <string name="initial_text">Text goes here.</string>
+</resources>
