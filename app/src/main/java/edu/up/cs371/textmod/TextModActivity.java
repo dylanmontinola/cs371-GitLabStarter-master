@@ -28,6 +28,8 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity {
@@ -35,9 +37,16 @@ public class TextModActivity extends ActionBarActivity {
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
 
+    public Button copyButton;
+    private TextView text;
+    private Spinner spinner;
+
+
+
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
-
+    private Button reverseButton;
+    private TextView editText;
     /**
      * @see Activity#onCreate(Bundle)
      */
@@ -65,10 +74,19 @@ public class TextModActivity extends ActionBarActivity {
         button.setOnClickListener(new cButtonListener());
 
 
+        text = (TextView)findViewById(R.id.editText);
+
+        copyButton = (Button)findViewById(R.id.copyname);
+        copyButton.setOnClickListener(new copyNameListener());
+
+        editText = (TextView)findViewById(R.id.editText);
+        reverseButton = (Button)findViewById(R.id.ReverseButton);
+        reverseButton.setOnClickListener(new ReverseButtonListener());
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner = (Spinner)findViewById(R.id.spinner);
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
@@ -156,6 +174,18 @@ public class TextModActivity extends ActionBarActivity {
     /**
      * @see Activity#onCreateOptionsMenu(Menu)
      */
+    private class copyNameListener implements View.OnClickListener
+    {
+        public void onClick(View view)
+        {
+            String poop = text.getText().toString();
+            String piss = spinner.getSelectedItem().toString();
+
+            text.setText(poop+piss);
+        }
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -205,5 +235,16 @@ public class TextModActivity extends ActionBarActivity {
         public void onNothingSelected(AdapterView<?> parentView) {
             // your code here
         }
+    }
+    private class ReverseButtonListener implements View.OnClickListener
+    {
+        public void onClick(View v)
+        {
+            String tbr = editText.getText().toString();
+            String reverse = new StringBuffer(tbr).reverse().toString();
+            editText.setText(reverse);
+
+        }
+
     }
 }
