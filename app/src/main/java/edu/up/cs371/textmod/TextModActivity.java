@@ -16,14 +16,23 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity {
 
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
+
+    public Button copyButton;
+    private TextView text;
+    private Spinner spinner;
+
+
 
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
@@ -41,10 +50,15 @@ public class TextModActivity extends ActionBarActivity {
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
 
+        text = (TextView)findViewById(R.id.editText);
+
+        copyButton = (Button)findViewById(R.id.copyname);
+        copyButton.setOnClickListener(new copyNameListener());
+
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        spinner = (Spinner)findViewById(R.id.spinner);
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
@@ -78,6 +92,18 @@ public class TextModActivity extends ActionBarActivity {
     /**
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
      */
+    private class copyNameListener implements View.OnClickListener
+    {
+        public void onClick(View view)
+        {
+            String poop = text.getText().toString();
+            String piss = spinner.getSelectedItem().toString();
+
+            text.setText(poop+piss);
+        }
+    }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
