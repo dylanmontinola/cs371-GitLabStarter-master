@@ -10,6 +10,8 @@
         <item>@mipmap/nuxoll</item>
         <item>@mipmap/vegdahl</item>
         <item>@mipmap/wyatt</item>
+        <item>@mipmap/dylan</item>
+        <item>@mipmap/tristan</item>
     </array>
 
     <string-array name="spinner_names">
@@ -17,6 +19,8 @@
         <item>Dr. Andrew Nuxoll</item>
         <item>Dr. Steven Vegdahl</item>
         <item>Wyatt Uhling</item>
+        <item>Dylan Montinola</item>
+        <item>Baby Tristan Boylan</item>
     </string-array>
 
 </resources>
