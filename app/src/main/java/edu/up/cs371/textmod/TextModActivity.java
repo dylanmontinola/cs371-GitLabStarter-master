@@ -35,7 +35,6 @@ public class TextModActivity extends ActionBarActivity {
     private ArrayList<Bitmap> images;
 
     public Button copyButton;
-    private TextView text;
     private Spinner spinner;
 
 
@@ -50,6 +49,8 @@ public class TextModActivity extends ActionBarActivity {
 
     private Button button;
     private TextView text;
+    private Button button6;
+    private Button button7;
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -64,7 +65,9 @@ public class TextModActivity extends ActionBarActivity {
 
         button6 = (Button)findViewById(R.id.button6);
         button7 = (Button)findViewById(R.id.button7);
+
         text = (EditText) findViewById(R.id.editText);
+
         button6.setOnClickListener(new upperButtonListener());
         button7.setOnClickListener(new lowerButtonListener());
         // set instance variables for our widgets
