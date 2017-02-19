@@ -35,8 +35,10 @@ public class TextModActivity extends ActionBarActivity {
     private ArrayList<Bitmap> images;
 
     public Button copyButton;
-    private TextView text;
+    //private TextView text;
     private Spinner spinner;
+    private Button button6;
+    private Button button7;
 
 
 
