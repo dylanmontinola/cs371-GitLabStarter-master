@@ -35,7 +35,6 @@ public class TextModActivity extends ActionBarActivity {
     private ArrayList<Bitmap> images;
 
     public Button copyButton;
-    private TextView text;
     private Spinner spinner;
 
 
@@ -50,6 +49,8 @@ public class TextModActivity extends ActionBarActivity {
 
     private Button button;
     private TextView text;
+    private Button button6;
+    private Button button7;
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
