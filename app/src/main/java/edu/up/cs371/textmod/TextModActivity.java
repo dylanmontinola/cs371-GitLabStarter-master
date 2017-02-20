@@ -40,6 +40,8 @@ public class TextModActivity extends ActionBarActivity {
     private Button button6;
     private Button button7;
 
+    private Button noPunctuation;
+
 
 
     // instance variables containing widgets
@@ -77,6 +79,9 @@ public class TextModActivity extends ActionBarActivity {
         button = (Button) findViewById(R.id.button);
         text = (TextView) findViewById(R.id.editText);
         button.setOnClickListener(new cButtonListener());
+
+        noPunctuation = (Button)findViewById(R.id.nopunctuation);
+        noPunctuation.setOnClickListener(new noPunctuationListener());
 
 
         text = (TextView)findViewById(R.id.editText);
@@ -125,6 +130,20 @@ public class TextModActivity extends ActionBarActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
+
+    private class noPunctuationListener implements View.OnClickListener
+    {
+        @Override
+        public void onClick(View v)
+        {
+            String i = text.getText().toString();
+            i = i.replaceAll("[^a-zA-Z\\s]", "").replaceAll("\\s+", " ");
+            text.setText(i);
+
+        }
+    }
+
+
     private class upperButtonListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
