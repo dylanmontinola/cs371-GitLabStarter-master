@@ -52,6 +52,7 @@ public class TextModActivity extends ActionBarActivity {
 
     private Button button;
     private TextView text;
+    private Button button2;
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -63,12 +64,12 @@ public class TextModActivity extends ActionBarActivity {
         // perform superclass initialization; load the layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_mod);
-
-        button6 = (Button)findViewById(R.id.button6);
-        button7 = (Button)findViewById(R.id.button7);
+        button2 = (Button) findViewById(R.id.button2);
+        button6 = (Button) findViewById(R.id.button6);
+        button7 = (Button) findViewById(R.id.button7);
 
         text = (EditText) findViewById(R.id.editText);
-
+        button2.setOnClickListener(new addRandomListener());
         button6.setOnClickListener(new upperButtonListener());
         button7.setOnClickListener(new lowerButtonListener());
         // set instance variables for our widgets
@@ -79,19 +80,19 @@ public class TextModActivity extends ActionBarActivity {
         button.setOnClickListener(new cButtonListener());
 
 
-        text = (TextView)findViewById(R.id.editText);
+        text = (TextView) findViewById(R.id.editText);
 
-        copyButton = (Button)findViewById(R.id.copyname);
+        copyButton = (Button) findViewById(R.id.copyname);
         copyButton.setOnClickListener(new copyNameListener());
 
-        editText = (TextView)findViewById(R.id.editText);
-        reverseButton = (Button)findViewById(R.id.ReverseButton);
+        editText = (TextView) findViewById(R.id.editText);
+        reverseButton = (Button) findViewById(R.id.ReverseButton);
         reverseButton.setOnClickListener(new ReverseButtonListener());
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
 
-        spinner = (Spinner)findViewById(R.id.spinner);
+        spinner = (Spinner) findViewById(R.id.spinner);
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
@@ -110,8 +111,8 @@ public class TextModActivity extends ActionBarActivity {
         // loop through, adding one image per string
         for (int i = 0; i < spinnerNames.length; i++) {
             // determine the index; use 0 if out of bounds
-            int id = imageIds2.getResourceId(i,0);
-            if (id == 0) id = imageIds2.getResourceId(0,0);
+            int id = imageIds2.getResourceId(i, 0);
+            if (id == 0) id = imageIds2.getResourceId(0, 0);
             // load the image; add to arraylist
             Bitmap img = BitmapFactory.decodeResource(getResources(), id);
             images.add(img);
@@ -125,6 +126,49 @@ public class TextModActivity extends ActionBarActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
+        private class addRandomListener implements View.OnClickListener{
+            public void onClick(View v) {
+                String cheese = text.getText().toString();
+                double rando = cheese.length()*Math.random();
+                int rando2 = (int)rando;
+                String up = cheese.substring(0,rando2);
+                String yarn = cheese.substring(rando2);
+                double randoNum= Math.random();
+                char randoChar;
+                if(randoNum<0.1){
+                    randoChar ='f';
+                }
+                else if(randoNum<0.2){
+                    randoChar ='u';
+                }
+                else if(randoNum<0.3){
+                    randoChar ='c';
+                }
+                else if(randoNum<0.4){
+                    randoChar ='k';
+                }
+                else if(randoNum<0.5){
+                    randoChar ='t';
+                }
+                else if(randoNum<0.6){
+                    randoChar ='h';
+                }
+                else if(randoNum<0.7){
+                    randoChar ='i';
+                }
+                else if(randoNum<0.8){
+                    randoChar ='s';
+                }
+                else if(randoNum<0.9){
+                    randoChar ='u';
+                }
+                else{
+                    randoChar ='p';
+                }
+                text.setText(up + randoChar + yarn);
+            }
+        }
+
     private class upperButtonListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
