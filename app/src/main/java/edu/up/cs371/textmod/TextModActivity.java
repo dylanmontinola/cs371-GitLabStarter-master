@@ -39,6 +39,7 @@ public class TextModActivity extends ActionBarActivity {
     private Spinner spinner;
     private Button button6;
     private Button button7;
+    private Button button9;
 
 
 
@@ -66,11 +67,13 @@ public class TextModActivity extends ActionBarActivity {
 
         button6 = (Button)findViewById(R.id.button6);
         button7 = (Button)findViewById(R.id.button7);
+        button9 = (Button)findViewById(R.id.button9);
 
         text = (EditText) findViewById(R.id.editText);
 
         button6.setOnClickListener(new upperButtonListener());
         button7.setOnClickListener(new lowerButtonListener());
+        button9.setOnClickListener(new noSpaceButtonListener());
         // set instance variables for our widgets
         imageView = (ImageView) findViewById(R.id.imageView);
 
@@ -136,6 +139,14 @@ public class TextModActivity extends ActionBarActivity {
         @Override
         public void onClick(View v) {
             String i = text.getText().toString().toLowerCase();
+            text.setText(i);
+        }
+    }
+    private class noSpaceButtonListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            String i = text.getText().toString();
+            i = i.replaceAll("\\s","");
             text.setText(i);
         }
     }

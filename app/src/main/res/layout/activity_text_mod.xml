@@ -110,6 +110,21 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="No Spaces"
+            android:id="@+id/button9"
+            android:textSize="@dimen/button_font_size"
+            android:textColor="@color/button_text_color"
+            android:background="@color/button_color"
+            android:clickable="true" />
+
+        <Space
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/reverse_button_text"
             android:id="@+id/ReverseButton"
             android:textSize="@dimen/button_font_size"
@@ -200,6 +215,10 @@
         android:layout_width="match_parent"
         android:layout_height="0sp"
         android:layout_weight="1"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></FrameLayout>
 
 
 </LinearLayout>
